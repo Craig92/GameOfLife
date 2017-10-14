@@ -20,11 +20,20 @@ public class Main {
 
         Spielbrett brett1 = new Spielbrett(Länge, Breite);
 
-      //  System.out.println("Spielbrett hat Länge" + brett1.array[].length + " Breite:" + brett1.array[].length  );
+        System.out.println("Spielbrett hat Länge" + brett1.länge + " Breite:" + brett1.breite);
 
+
+        brett1.set(5, 5, true);
+
+        brett1.printSpielbrett();
+
+        boolean abc = true;
 
 
 
     }
 
-}
+    }
+
+
+

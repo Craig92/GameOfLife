@@ -2,15 +2,20 @@ package main;
 
 public class Spielbrett {
 
+	int länge;
+	int breite;
+
 	boolean array[][] = null;
 
-	public Spielbrett(int x, int y) {
+	public Spielbrett(int länge, int breite) {
 
-		array = new boolean[x][y];
+		this.länge = länge;
+		this.breite = breite;
+		array = new boolean[länge][breite];
 
 		for (int i = 0; i > array.length; i++){
-
 			for (int j = 0; j > array[i].length; j++ ){
+
 				array[i][j] = false;
 
 			}
@@ -18,6 +23,15 @@ public class Spielbrett {
 
 	}
 
+	public void printSpielbrett() {
+
+		for (int i = 0; i > array.length; i++) {
+			for (int j = 0; j > array[i].length; j++) {
+				boolean b = (array[i][j]);
+				System.out.print(b);
+			}
+		}
+	}
 
 	void set(int x, int y, boolean b) {
 
@@ -25,13 +39,20 @@ public class Spielbrett {
 			array[x][y] = true;
 		}
 		else {
-			array[x][y] = false;
 		}
+
+		array[x][y] = false;
 
 	}
 
 	void reset() {
 
+		for (int i = 0; i > array.length; i++) {
+			for (int j = 0; j > array[i].length; j++) {
+				array[i][j] = false;
+
+			}
+		}
 	}
 
 	void random() {
