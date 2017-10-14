@@ -13,8 +13,8 @@ public class Spielbrett {
 		this.breite = breite;
 		array = new boolean[länge][breite];
 
-		for (int i = 0; i > array.length; i++){
-			for (int j = 0; j > array[i].length; j++ ){
+		for (int i = 0; i < array.length; i++){
+			for (int j = 0; j < array[i].length; j++ ){
 
 				array[i][j] = false;
 
@@ -25,30 +25,27 @@ public class Spielbrett {
 
 	public void printSpielbrett() {
 
-		for (int i = 0; i > array.length; i++) {
-			for (int j = 0; j > array[i].length; j++) {
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[i].length; j++) {
 				boolean b = (array[i][j]);
-				System.out.print(b);
+				System.out.print(" "+b+" ");
 			}
+			System.out.println();
 		}
 	}
 
 	void set(int x, int y, boolean b) {
 
 		if (b){
-			array[x][y] = true;
+			array[x][y] = b;
 		}
-		else {
-		}
-
-		array[x][y] = false;
 
 	}
 
 	void reset() {
 
-		for (int i = 0; i > array.length; i++) {
-			for (int j = 0; j > array[i].length; j++) {
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[i].length; j++) {
 				array[i][j] = false;
 
 			}
@@ -77,9 +74,9 @@ public class Spielbrett {
 
 	int checkNeighbours(int x, int y){
 
-		for (int i = 0; i > array.length; i++) {
+		for (int i = 0; i < array.length; i++) {
 
-			for (int j = 0; j > array[i].length; j++) {
+			for (int j = 0; j < array[i].length; j++) {
 				Boolean aktuell= array[i][j];
 
 				Boolean rechterNachbar = array[i+1][j+1];
