@@ -14,9 +14,11 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JToggleButton;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+
 
 public class GUI extends JFrame implements ActionListener {
 
@@ -93,6 +95,20 @@ public class GUI extends JFrame implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		
+		if(e.getSource() == neu) {
+			try{
+				JFrame tempWindow;
+				tempWindow = new ChangeSizeMask();
+				tempWindow.setVisible(true);
+			}catch(Exception ex){
+				
+				JOptionPane.showMessageDialog(
+						null,
+						"Fehler beim Erstellen eines neuen Games of Live Instanz",
+						"Fehler", JOptionPane.CANCEL_OPTION);
+			}
+		}
 	}
 
 }
