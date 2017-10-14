@@ -23,7 +23,9 @@ public class Main {
         System.out.println("Spielbrett hat laenge" + brett1.laenge + " breite:" + brett1.breite);
 
 
-        brett1.set(5, 5, true);
+       // brett1.set(5, 5, true);
+        
+        brett1.random();
 
         brett1.printSpielbrett();
 
