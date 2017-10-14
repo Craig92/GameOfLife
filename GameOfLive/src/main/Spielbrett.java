@@ -36,9 +36,7 @@ public class Spielbrett {
 
 	void set(int x, int y, boolean b) {
 
-		if (b){
 			array[x][y] = b;
-		}
 
 	}
 
