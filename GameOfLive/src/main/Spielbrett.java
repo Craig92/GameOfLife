@@ -77,6 +77,7 @@ public class Spielbrett {
 
 	}
 
+	@SuppressWarnings("unused")
 	int checkNeighbours(int x, int y){
 
 		for (int i = 0; i < array.length; i++) {
@@ -84,16 +85,16 @@ public class Spielbrett {
 			for (int j = 0; j < array[i].length; j++) {
 				Boolean aktuell= getAktuell(i,j);
 
-				Boolean rechterNachbar = array[i+1][j+1];
-				Boolean rechtsUnten = array[i+1][j];
-				Boolean rechtsOben = array[i+1][j-1];
+				Boolean rechterNachbar = getAktuell(i+1,j+1);
+				Boolean rechtsUnten = getAktuell(i+1,j);
+				Boolean rechtsOben = getAktuell(i+1,j-1);
 
-				Boolean linkerNachbar = array[1-1][j+1];
-				Boolean linksOben = array[i-1][j];
-				Boolean linksUnten = array[i-1][j-1];
+				Boolean linkerNachbar = getAktuell(1-1,j+1);
+				Boolean linksOben = getAktuell(i-1,j);
+				Boolean linksUnten = getAktuell(i-1,j-1);
 
-				Boolean unten = array[i+1][j];
-				Boolean oben = array[i+1][j];
+				Boolean unten = getAktuell(i+1,j);
+				Boolean oben = getAktuell(i+1,j);
 
 
 			}

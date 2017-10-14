@@ -23,11 +23,19 @@ public class Main {
         System.out.println("Spielbrett hat laenge" + brett1.laenge + " breite:" + brett1.breite);
 
 
-       // brett1.set(5, 5, true);
+        brett1.set(5, 5, true);
+        
+        if(brett1.getAktuell(5,5).equals(true))
+        	System.out.println("getAktuell funktioniert.");
+        
+        brett1.printSpielbrett();
         
         brett1.random();
 
         brett1.printSpielbrett();
+     
+        
+        
 
         boolean abc = true;
 
