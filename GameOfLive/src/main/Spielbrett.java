@@ -82,7 +82,7 @@ public class Spielbrett {
 		for (int i = 0; i < array.length; i++) {
 
 			for (int j = 0; j < array[i].length; j++) {
-				Boolean aktuell= array[i][j];
+				Boolean aktuell= getAktuell(i,j);
 
 				Boolean rechterNachbar = array[i+1][j+1];
 				Boolean rechtsUnten = array[i+1][j];
@@ -100,6 +100,10 @@ public class Spielbrett {
 
 		}
 		return 1;
+	}
+	
+	Boolean getAktuell(int x, int y) {
+				return array[x][y];	
 	}
 
 	void einzelSchritt() {
