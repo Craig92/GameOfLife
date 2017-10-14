@@ -2,16 +2,16 @@ package main;
 
 public class Spielbrett {
 
-	int länge;
+	int laenge;
 	int breite;
 
 	boolean array[][] = null;
 
-	public Spielbrett(int länge, int breite) {
+	public Spielbrett(int laenge, int breite) {
 
-		this.länge = länge;
+		this.laenge = laenge;
 		this.breite = breite;
-		array = new boolean[länge][breite];
+		array = new boolean[laenge][breite];
 
 		for (int i = 0; i < array.length; i++){
 			for (int j = 0; j < array[i].length; j++ ){
