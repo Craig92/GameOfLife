@@ -1,8 +1,10 @@
 package main;
 
+import java.io.IOException;
+
 public class Main {
 
-    public static void main (String[] args){
+    public static void main (String[] args) throws IOException{
 
         int laenge;
         int breite;
@@ -29,12 +31,13 @@ public class Main {
         	System.out.println("getAktuell funktioniert.");
         
         brett1.printSpielbrett();
+        System.out.println();
         
         brett1.random();
 
         brett1.printSpielbrett();
      
-        
+        brett1.speichern("Hello1.txt");
         
 
         boolean abc = true;

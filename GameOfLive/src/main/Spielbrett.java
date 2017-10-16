@@ -1,5 +1,14 @@
 package main;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Spielbrett {
 
 	int laenge;
@@ -14,7 +23,7 @@ public class Spielbrett {
 		array = new boolean[laenge][breite];
 
 		for (int i = 0; i < array.length; i++){
-			for (int j = 0; j < array[i].length; j++ ){
+			for (int j = 0; j < array[0].length; j++ ){
 
 				array[i][j] = false;
 
@@ -26,7 +35,7 @@ public class Spielbrett {
 	public void printSpielbrett() {
 
 		for (int i = 0; i < array.length; i++) {
-			for (int j = 0; j < array[i].length; j++) {
+			for (int j = 0; j < array[0].length; j++) {
 				boolean b = (array[i][j]);
 				System.out.print(" "+b+" ");
 			}
@@ -43,7 +52,7 @@ public class Spielbrett {
 	void reset() {
 
 		for (int i = 0; i < array.length; i++) {
-			for (int j = 0; j < array[i].length; j++) {
+			for (int j = 0; j < array[0].length; j++) {
 				array[i][j] = false;
 
 			}
@@ -52,7 +61,7 @@ public class Spielbrett {
 
 	void random() {
 		for (int i = 0; i < array.length; i++) {
-			for (int j = 0; j < array[i].length; j++) {
+			for (int j = 0; j < array[0].length; j++) {
 				array[i][j] = Math.random() < 0.5;
 
 			}
@@ -61,11 +70,51 @@ public class Spielbrett {
 
 	}
 
-	void speichern(String filename) {
+	void speichern(String filename) throws IOException {
+		
+		// creates a FileWriter Object
+	      FileWriter writer = new FileWriter(filename); 
+	      
+	      writer.write(" "+array.length+" "); 
+	      writer.write(" "+array[0].length+" "); 
+	      for (int i = 0; i < array.length; i++) {
+				for (int j = 0; j < array[0].length; j++) {
+					Boolean b=array[i][j] ;
+					// Writes the content to the file
+					writer.write(b+" "); 
+				}
+			}
+	      
+	      
+	      writer.flush();
+	      writer.close();
 
 	}
 
-	void laden(String filename) {
+	void laden(File file) throws IOException {
+		  
+		List<Boolean[]> list = new ArrayList<Boolean[]>();
+		
+		BufferedReader read = new BufferedReader(new FileReader(file));
+		String in = read.readLine();
+		
+//		while(in != null) {
+//			String 
+//		}
+//		
+//		5
+		
+		// Creates a FileReader Object
+//	      FileReader fr = new FileReader(filename);
+	      
+	      for (int i = 0; i < array.length; i++) {
+				for (int j = 0; j < array[0].length; j++) {
+					//array[i][j]= fr.read(a); ;
+					
+				}
+			}
+	      char [] a = new char[50];
+//	      fr.read(a);   // reads the content to the array
 
 	}
 
@@ -79,13 +128,18 @@ public class Spielbrett {
 
 	@SuppressWarnings("unused")
 	int checkNeighbours(int x, int y){
+		int anzahlNachbarn=0;
 
 		for (int i = 0; i < array.length; i++) {
 
-			for (int j = 0; j < array[i].length; j++) {
-				Boolean aktuell= getAktuell(i,j);
+			for (int j = 0; j < array[0].length; j++) {
+				//Boolean aktuell= getAktuell(i,j);
 
+				if(i+1<=array.length&&j+1<=array[i].length) {
 				Boolean rechterNachbar = getAktuell(i+1,j+1);
+				}else {
+					
+				}
 				Boolean rechtsUnten = getAktuell(i+1,j);
 				Boolean rechtsOben = getAktuell(i+1,j-1);
 
